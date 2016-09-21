@@ -1,8 +1,6 @@
-package com.lifuz.imooc;
+package com.lifuz.singleton;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * 作者：李富

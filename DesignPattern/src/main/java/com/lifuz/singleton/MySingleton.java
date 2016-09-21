@@ -1,4 +1,4 @@
-package com.lifuz.imooc;
+package com.lifuz.singleton;
 
 /**
  * 单例模式 Singleton
