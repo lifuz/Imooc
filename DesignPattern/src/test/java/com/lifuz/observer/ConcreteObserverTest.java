@@ -1,5 +1,7 @@
 package com.lifuz.observer;
 
+import com.lifuz.observer.jdk.JdkConcreteObserver;
+import com.lifuz.observer.jdk.JdkConcreteWeatherSuject;
 import com.lifuz.observer.weather.ConcreteWeatherSubject;
 import com.lifuz.observer.weather.PushConcreteWeatherSubject;
 import com.lifuz.observer.weather.PushWeatherSubJect;
@@ -32,15 +34,30 @@ public class ConcreteObserverTest {
         weatherSubject.attach(observer);
         weatherSubject.attach(observerGirl);
 
-        weatherSubject.setWeatherContent("明天天气晴朗，蓝天白云，气温28度");
+//        weatherSubject.setWeatherContent("明天天气晴朗，蓝天白云，气温28度");
+//
+//        PushConcreteWeatherSubject pushWeatherSubJect = new PushConcreteWeatherSubject();
+//
+//        pushWeatherSubJect.attach(observer);
+//        pushWeatherSubJect.attach(observerGirl);
+//
+//        pushWeatherSubJect.setWeatherContent("明天天气晴朗，蓝天白云，气温28度");
 
-        PushConcreteWeatherSubject pushWeatherSubJect = new PushConcreteWeatherSubject();
+        JdkConcreteWeatherSuject jdkSuject = new JdkConcreteWeatherSuject();
+//        jdkSuject.addObserver();
+        JdkConcreteObserver jdkObserver = new JdkConcreteObserver();
 
-        pushWeatherSubJect.attach(observer);
-        pushWeatherSubJect.attach(observerGirl);
+        jdkObserver.setObserverName("老妈");
+        jdkObserver.setRemindThing("是一个购物的好日子，明天去扫货");
 
-        pushWeatherSubJect.setWeatherContent("明天天气晴朗，蓝天白云，气温28度");
+        JdkConcreteObserver jdkConcreteObserver = new JdkConcreteObserver();
+        jdkConcreteObserver.setObserverName("黄明女朋友");
+        jdkConcreteObserver.setRemindThing("是我们第一次约会，地点街心公园，不见不散哦");
 
+        jdkSuject.addObserver(jdkObserver);
+        jdkSuject.addObserver(jdkConcreteObserver);
+
+        jdkSuject.setContent("明天天气晴朗，蓝天白云，气温28度");
 
     }
 
