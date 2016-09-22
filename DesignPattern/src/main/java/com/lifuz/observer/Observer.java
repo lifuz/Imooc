@@ -19,4 +19,6 @@ public interface Observer {
     void update(SubJect subJect);
 
     void update(WeatherSubJect subJect);
+
+    void update(String content);
 }

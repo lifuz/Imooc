@@ -1,6 +1,8 @@
 package com.lifuz.observer;
 
 import com.lifuz.observer.weather.ConcreteWeatherSubject;
+import com.lifuz.observer.weather.PushConcreteWeatherSubject;
+import com.lifuz.observer.weather.PushWeatherSubJect;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -31,6 +33,14 @@ public class ConcreteObserverTest {
         weatherSubject.attach(observerGirl);
 
         weatherSubject.setWeatherContent("明天天气晴朗，蓝天白云，气温28度");
+
+        PushConcreteWeatherSubject pushWeatherSubJect = new PushConcreteWeatherSubject();
+
+        pushWeatherSubJect.attach(observer);
+        pushWeatherSubJect.attach(observerGirl);
+
+        pushWeatherSubJect.setWeatherContent("明天天气晴朗，蓝天白云，气温28度");
+
 
     }
 

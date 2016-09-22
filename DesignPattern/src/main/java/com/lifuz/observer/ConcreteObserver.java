@@ -35,6 +35,15 @@ public class ConcreteObserver implements Observer {
 
     }
 
+    @Override
+    public void update(String content) {
+
+        weatherContent = content;
+
+        System.out.println(observerName + "收到了" + weatherContent + "," +remindThing);
+
+    }
+
     public String getObserverName() {
         return observerName;
     }
