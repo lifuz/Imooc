@@ -1,6 +1,7 @@
 package com.lifuz.chain.cor;
 
 import com.lifuz.chain.handler.PriceHandler;
+import com.lifuz.chain.handler.PriceHandlerFactory;
 import org.junit.Test;
 
 import java.util.Random;
@@ -17,7 +18,7 @@ public class CustomerTest {
 
         Customer customer = new Customer();
 
-        customer.setPriceHandler(PriceHandler.createPriceHandler());
+        customer.setPriceHandler(PriceHandlerFactory.createPriceHandler());
 
         Random random = new Random();
 
