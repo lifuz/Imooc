@@ -14,7 +14,6 @@ CREATE TABLE auth_user(
 CREATE TABLE auth_role(
   id BIGINT NOT NULL AUTO_INCREMENT COMMENT '编号id',
   name VARCHAR(64) NOT NULL  COMMENT '角色名',
-  status INT NOT NULL COMMENT '状态',
   create_time TIMESTAMP NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
   update_time TIMESTAMP NOT NULL DEFAULT current_timestamp COMMENT '更新时间',
   PRIMARY KEY (id)
@@ -45,6 +44,7 @@ CREATE TABLE auth_role_function(
   id BIGINT NOT NULL AUTO_INCREMENT COMMENT '编号id',
   role_id BIGINT NOT NULL COMMENT '角色id',
   funtion_id BIGINT NOT NULL COMMENT '功能id',
+  status INT NOT NULL COMMENT '状态',
   create_time TIMESTAMP NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
   update_time TIMESTAMP NOT NULL DEFAULT current_timestamp COMMENT '更新时间',
   PRIMARY KEY (id)
