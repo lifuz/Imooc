@@ -1,5 +1,7 @@
 package com.lifuz.Strategy;
 
+import com.lifuz.Strategy.impl.FlyWithWin;
+
 /**
  * 作者：李富
  * 邮箱：lifuzz@163.com
@@ -10,6 +12,8 @@ public class RedHeadDuck extends Duck {
     @Override
     public void quack() {
         super.quack();
+
+        super.setFlyingStategy(new FlyWithWin());
     }
 
     @Override

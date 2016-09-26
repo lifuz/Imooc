@@ -24,5 +24,13 @@ public abstract class Duck {
      */
     public abstract void display();
 
+    private  FlyingStategy flyingStategy;
 
+    public void setFlyingStategy(FlyingStategy flyingStategy) {
+        this.flyingStategy = flyingStategy;
+    }
+
+    public void fly() {
+        flyingStategy.performFly();
+    }
 }
