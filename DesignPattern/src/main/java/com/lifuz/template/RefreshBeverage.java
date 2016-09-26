@@ -10,6 +10,14 @@ package com.lifuz.template;
  */
 public abstract class RefreshBeverage {
 
+
+
+    public boolean isWantCondiments() {
+        return true;
+    }
+
+
+
     /**
      * 制备饮料的模板方法
      */
@@ -25,7 +33,11 @@ public abstract class RefreshBeverage {
         pourIncup();
 
         //4.加入调味料
-        addCondiments();
+
+        if (isWantCondiments()) {
+
+            addCondiments();
+        }
     }
 
     protected abstract void addCondiments();

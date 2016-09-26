@@ -6,6 +6,12 @@ package com.lifuz.template;
  * 时间：2016/9/26 11:32
  */
 public class Tea extends RefreshBeverage {
+
+    @Override
+    public boolean isWantCondiments() {
+        return false;
+    }
+
     @Override
     protected void addCondiments() {
         System.out.println("不用添加");
