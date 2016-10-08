@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lifuz.auth.dao.UserRoleDao">
+
+    <sql id="base_column">
+        id,role_id,user_id,create_time,update_time
+    </sql>
+
+    <insert id="saveUserRole" parameterType="UserRole" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO auth.auth_user_role(role_id, user_id)
+        VALUE (#{roleId},#{userId});
+    </insert>
+
+    <select id="getUserRole" resultType="UserRole">
+        SELECT
+        <include refid="base_column"/>
+        WHERE id = #{id};
+    </select>
+
+    <select id="findUserRolesByUserId" resultType="UserRole">
+        SELECT
+        <include refid="base_column"/>
+        WHERE user_id = #{userId};
+    </select>
+
+    <select id="findUserRoles" resultType="UserRole">
+        SELECT
+        <include refid="base_column"/>
+        limit #{offset},#{rows};
+    </select>
+
+    <select id="findUserRoleByRoleId" resultType="UserRole">
+        SELECT
+        <include refid="base_column"/>
+        WHERE role_id = #{roleId};
+    </select>
+
+    <delete id="deleteById" >
+        DELETE FROM auth.auth_user_role
+        WHERE id = #{id};
+    </delete>
+
+</mapper>
