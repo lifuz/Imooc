@@ -16,24 +16,28 @@
     <select id="getUserRole" resultType="UserRole">
         SELECT
         <include refid="base_column"/>
+        FROM auth.auth_user_role
         WHERE id = #{id};
     </select>
 
     <select id="findUserRolesByUserId" resultType="UserRole">
         SELECT
         <include refid="base_column"/>
+        FROM auth.auth_user_role
         WHERE user_id = #{userId};
     </select>
 
     <select id="findUserRoles" resultType="UserRole">
         SELECT
         <include refid="base_column"/>
+        FROM auth.auth_user_role
         limit #{offset},#{rows};
     </select>
 
     <select id="findUserRoleByRoleId" resultType="UserRole">
         SELECT
         <include refid="base_column"/>
+        FROM auth.auth_user_role
         WHERE role_id = #{roleId};
     </select>
 
