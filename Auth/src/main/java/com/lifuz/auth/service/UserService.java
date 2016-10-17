@@ -73,4 +73,11 @@ public interface UserService {
      */
     List<UserRole> getUserRolesByUserId(Long userId);
 
+    /**
+     *保存用户角色对应关系
+     * @param userId 用户id
+     * @param roleIds 一组角色id
+     */
+    void addUserRoles(Long userId,List<Long> roleIds);
+
 }

@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * 用户信息处理service层实现类
- *
+ * <p>
  * 作者：李富
  * 邮箱：lifuzz@163.com
  * 时间：2016/10/8 16:44
@@ -49,15 +49,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String name, String pwd) {
-        return userDao.getUser(name,pwd);
+        return userDao.getUser(name, pwd);
     }
 
     @Override
-    public List<User> getUsers(int pageIndex,int pageSize) {
+    public List<User> getUsers(int pageIndex, int pageSize) {
 
-        int offset = (pageIndex -1 ) * pageSize;
+        int offset = (pageIndex - 1) * pageSize;
 
-        return userDao.findUsers(offset,pageSize);
+        return userDao.findUsers(offset, pageSize);
     }
 
     @Override
@@ -67,12 +67,29 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserRole> getUsserRoles(int pageIndex, int pageSize) {
-        int offset = (pageIndex -1 ) * pageSize;
-        return userRoleDao.findUserRoles(offset,pageSize);
+        int offset = (pageIndex - 1) * pageSize;
+        return userRoleDao.findUserRoles(offset, pageSize);
     }
 
     @Override
     public List<UserRole> getUserRolesByUserId(Long userId) {
         return userRoleDao.findUserRolesByUserId(userId);
+    }
+
+    @Override
+    public void addUserRoles(Long userId, List<Long> roleIds) {
+
+        for (Long roleId :
+                roleIds) {
+
+            UserRole userRole = new UserRole();
+
+            userRole.setRoleId(roleId);
+            userRole.setUserId(userId);
+
+            userRoleDao.saveUserRole(userRole);
+
+        }
+
     }
 }
