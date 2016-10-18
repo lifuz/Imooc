@@ -31,4 +31,21 @@
         WHERE id = #{id};
     </delete>
 
+    <select id="findRoles" resultType="Role">
+        SELECT
+        <include refid="base_column"/>
+        FROM auth.auth_role
+        limit #{offset},#{rows}
+    </select>
+
+    <select id="findByIds" resultType="Role" >
+        SELECT
+        <include refid="base_column" />
+        FROM auth.auth_role
+        WHERE id IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
 </mapper>

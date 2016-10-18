@@ -9,7 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 作者：李富
@@ -19,6 +20,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring/spring-dao.xml"})
 public class RoleDaoTest {
+
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -74,6 +76,29 @@ public class RoleDaoTest {
         int result = roleDao.deleteById(id);
 
         logger.debug("result = {}",result);
+
+    }
+
+    @Test
+    public void findRoles() throws Exception {
+
+        List<Role> roles = roleDao.findRoles(0,5);
+
+        logger.debug("roles = {}", roles);
+
+    }
+
+    @Test
+    public void findByIds() throws Exception {
+
+        List<Long> ids = new ArrayList<>();
+
+        ids.add(1000L);
+        ids.add(1001L);
+
+        List<Role> roles = roleDao.findByIds(ids);
+
+        logger.debug("roles = {}", roles);
 
     }
 

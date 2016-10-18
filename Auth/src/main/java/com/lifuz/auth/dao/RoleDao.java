@@ -1,6 +1,9 @@
 package com.lifuz.auth.dao;
 
 import com.lifuz.auth.entity.Role;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 角色 dao类
@@ -44,6 +47,21 @@ public interface RoleDao {
      * @return 数据库操作结果
      */
     Integer deleteById(Long id);
+
+    /**
+     * 分页查询角色列表
+     * @param offset 起始位置
+     * @param rows 最大记录数目
+     * @return 角色集合
+     */
+    List<Role> findRoles(@Param("offset") int offset,@Param("rows") int rows);
+
+    /**
+     * 根据id的集合获取 角色集合
+     * @param ids 角色id集合
+     * @return 角色集合
+     */
+    List<Role> findByIds(List<Long> ids);
 
 
 }

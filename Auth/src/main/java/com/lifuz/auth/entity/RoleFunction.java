@@ -1,5 +1,8 @@
 package com.lifuz.auth.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 /**
@@ -12,6 +15,8 @@ import java.util.Date;
  * 邮箱：lifuzz@163.com
  * 时间：2016/9/26 17:54
  */
+@Data
+@NoArgsConstructor
 public class RoleFunction {
 
     private Long id;
