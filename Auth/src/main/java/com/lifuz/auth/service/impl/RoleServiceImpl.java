@@ -63,7 +63,7 @@ public class RoleServiceImpl implements RoleService {
             throw new AuthException("角色信息更新失败");
         }
 
-        result = roleFunctionDao.deleteByRoleId(role.getId());
+        roleFunctionDao.deleteByRoleId(role.getId());
 
         for (RoleFunction roleFunction: roleFunctions
              ) {

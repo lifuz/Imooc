@@ -45,4 +45,22 @@
         WHERE id = #{id};
     </delete>
 
+    <update id="updateUrl">
+        UPDATE auth.auth_function
+        SET url = #{url}
+        WHERE id = #{id}
+    </update>
+
+    <select id="findFunctions" resultType="Function">
+        SELECT id,name,parent_id,url,serial_num,accordion,create_time,update_time
+        FROM auth.auth_function
+        WHERE parent_id = #{parentId}
+        limit #{offset},#{rows}
+    </select>
+
+    <select id="findAll" resultType="Function">
+        SELECT id,name,parent_id,url,serial_num,accordion,create_time,update_time
+        FROM auth.auth_function
+    </select>
+
 </mapper>

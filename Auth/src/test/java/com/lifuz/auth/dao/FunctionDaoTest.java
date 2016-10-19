@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -19,6 +21,35 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring/spring-dao.xml"})
 public class FunctionDaoTest {
+    @Test
+    public void findAll() throws Exception {
+
+        List<Function> functions = functionDao.findAll();
+
+        logger.debug("functions = {}", functions);
+
+    }
+
+    @Test
+    public void findFunctions() throws Exception {
+
+        List<Function> functions = functionDao.findFunctions(0, 5, 1000L);
+
+        logger.debug("functions = {}", functions);
+
+    }
+
+    @Test
+    public void updateUrl() throws Exception {
+
+        Long id = 1001L;
+        String url = "www.imooc.com";
+
+        int result = functionDao.updateUrl(id, url);
+
+        logger.debug("result = {}", result);
+
+    }
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -38,18 +69,18 @@ public class FunctionDaoTest {
 
         int result = functionDao.saveFun(function);
 
-        logger.debug("result = {} \nfunction = {}",result,function);
+        logger.debug("result = {} \nfunction = {}", result, function);
 
     }
 
     @Test
     public void getFun() throws Exception {
 
-        Long id = 1000L;
+        Long id = 1001L;
 
         Function function = functionDao.getFun(id);
 
-        logger.debug("function = {}",function);
+        logger.debug("function = {}", function);
 
     }
 
@@ -65,7 +96,7 @@ public class FunctionDaoTest {
 
         int result = functionDao.updateFun(function);
 
-        logger.debug("result = {} \nfunction = {}",result,function);
+        logger.debug("result = {} \nfunction = {}", result, function);
 
     }
 
@@ -76,7 +107,7 @@ public class FunctionDaoTest {
 
         int result = functionDao.deleteFun(id);
 
-        logger.debug("result = {}",result);
+        logger.debug("result = {}", result);
 
     }
 
