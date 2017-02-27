@@ -11,6 +11,7 @@
     <modules>
         <module>DesignPattern</module>
         <module>Auth</module>
+        <module>Shiro</module>
     </modules>
 
     <dependencies>
