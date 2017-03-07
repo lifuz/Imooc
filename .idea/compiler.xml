@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ActiveMq" />
         <module name="Auth" />
         <module name="DesignPattern" />
         <module name="Shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="ActiveMq" target="1.5" />
       <module name="Auth" target="1.5" />
       <module name="DesignPattern" target="1.5" />
       <module name="Imooc" target="1.5" />
