@@ -13,7 +13,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="ActiveMq" target="1.5" />
+      <module name="ActiveMq" target="1.8" />
       <module name="Auth" target="1.5" />
       <module name="DesignPattern" target="1.5" />
       <module name="Imooc" target="1.5" />

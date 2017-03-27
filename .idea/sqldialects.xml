@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/ActiveMq/src/main/resources/schame.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/Auth/src/main/sql/auth.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Shiro/src/main/sql/jdbcRealmSql.sql" dialect="MySQL" />
   </component>
