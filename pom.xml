@@ -12,6 +12,7 @@
         <module>DesignPattern</module>
         <module>Auth</module>
         <module>Shiro</module>
+        <module>SpringMq</module>
     </modules>
 
     <dependencies>

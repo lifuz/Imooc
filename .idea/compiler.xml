@@ -10,6 +10,7 @@
         <module name="Auth" />
         <module name="DesignPattern" />
         <module name="Shiro" />
+        <module name="SpringMq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -18,6 +19,7 @@
       <module name="DesignPattern" target="1.5" />
       <module name="Imooc" target="1.5" />
       <module name="Shiro" target="1.8" />
+      <module name="SpringMq" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

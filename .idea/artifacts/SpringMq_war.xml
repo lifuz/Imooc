@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringMq:war">
+    <output-path>$PROJECT_DIR$/SpringMq/target</output-path>
+    <root id="archive" name="SpringMq.war">
+      <element id="artifact" artifact-name="SpringMq:war exploded" />
+    </root>
+  </artifact>
+</component>

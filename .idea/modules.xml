@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/Imooc.iml" filepath="$PROJECT_DIR$/Imooc.iml" />
       <module fileurl="file://$PROJECT_DIR$/Shiro/Shiro.iml" filepath="$PROJECT_DIR$/Shiro/Shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMq/SpringMq.iml" filepath="$PROJECT_DIR$/SpringMq/SpringMq.iml" />
     </modules>
   </component>
 </project>
